@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "./Form.css"
 
 class FormFilm extends Component {
     constructor(props) {
@@ -27,7 +26,7 @@ class FormFilm extends Component {
             body: JSON.stringify(this.state),
         };
 
-        const url = "http://campus-bordeaux.ovh:3001/api/quests/movies/";
+        const url = "//campus-bordeaux.ovh:3001/api/quests/movies/";
 
         fetch(url, config)
             .then(res => res.json())
@@ -41,6 +40,11 @@ class FormFilm extends Component {
                 console.error(e);
                 alert('Error during update film');
             });
+            this.setState({
+                name: '',
+                poster: '',
+                comment: '',
+            })
     }
 
 
